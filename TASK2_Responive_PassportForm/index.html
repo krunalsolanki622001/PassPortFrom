@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Passport Form</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #right {
+            margin: 30px;
+            padding: 10px;
+            float: right;
+        }
+
+        h3 {
+            text-align: center;
+            font-family: serif;
+            font-weight: bold;
+        }
+
+        .one {
+            margin: 30px;
+            padding: 10px;
+            float: right;
+            background-color: #EDF1FF;
+        }
+
+        #partone {
+            background-color: orange;
+            border-bottom: 3px solid black;
+        }
+
+        #bx {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container" id="main">
+        <form name="passportform" method="post" action="#" onsubmit="return validatepassport()">
+            <div class="form-group" id="right">
+                <label><b>File Number (For Office Use Only)</b></label>
+                <input type="text" class="form-control" name="file_number" id="fnum" placeholder="Enter File Number">
+            </div>
+
+            <div class="one">
+                <h3>GOVERNMENT OF INDIA, MINISTRY OF EXTERNAL AFFAIRS</h3>
+                <h3>PASSPORT APPLICATION FORM</h3>
+
+                <p>Please read the Passport Instruction Booklet carefully before filling the form. Fill this form in
+                    CAPITAL LETTERS
+                    using blue/ black ink ball point pen only. Furnishing of incorrect information/ suppression of
+                    information would
+                    lead to rejection of the application and would attract penal provisions as prescribed under the
+                    Passports Act,
+                    1967. Please produce your original documents at the time of submission of the form.
+                </p>
+                <hr style="height:2px;border-width:0;color:gray;background-color:black">
+
+                <!-- for 1st  -->
+                <div id="first">
+                    <h4 id=partone>1. Service Required</h4>
+                    <div class="label label-primary" id="h4"><b>1.1 Applying for</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="html" name="fav_language" value="HTML"
+                                onclick="disable()">Fresh Passport
+                            <label class="form-check-label" for="html"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="css" name="fav_language" value="CSS"
+                                onclick="enable()">Re-issue of Passport
+                            <label class="form-check-label" for="css"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="ri"><b>1.2 If re-issue, specify reason(s)</b></div>
+                    <div class="form-group row" id="bx">
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c3" name="check">Validity Expired within
+                            3 years/ Due to Expire
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c4" name="check">Exhaustion of Pages
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c5" name="check">Validity Expired more
+                            than 3 years ago
+                            <label class="form-check-label" for="c5"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c6" name="check">Lost Passport
+                            <label class="form-check-label" for="c6"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c7" name="check">Change in Existing
+                            Personal Particulars
+                            <label class="form-check-label" for="c7"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c8" name="check">Damaged Passport
+                            <label class="form-check-label" for="c8"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="sr"><b>1.3 If change in existing personal particulars, specify
+                            reason(s)</b></div>
+                    <div class="form-group row" id="bx">
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_1" name="abc">Appearance
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_2" name="abc">Signature
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_3" name="abc">Given Name
+                            <label class="form-check-label" for="c5"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_4" name="abc">Surname
+                            <label class="form-check-label" for="c6"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_5" name="abc">Date Of Birth
+                            <label class="form-check-label" for="c7"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_6" name="abc">Spouse Name
+                            <label class="form-check-label" for="c8"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_7" name="abc">Address
+                            <label class="form-check-label" for="c8"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_8" name="abc"
+                                onclick="dlt()">Delete ECR
+                            <label class="form-check-label" for="c8"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="checkbox" class="form-check-input" id="c1_3_9" name="abc"
+                                onclick="hello()">Others, Please specify
+                            <label class="form-check-label" for="c8"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="textarea" class="form-control" id="txtarea1" name="txt1" disabled>
+                        <input type="textarea" class="form-control" id="txtarea2" name="txt2" disabled>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>1.4 Type of Application</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="c1" name="fav">Normal
+                            <label class="form-check-label" for="html"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="c2" name="fav">Tatkaal
+                            <label class="form-check-label" for="css"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>1.5 Type of Passport Booklet</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="c1" name="fav1">36 Pages
+                            <label class="form-check-label" for="html"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="c2" name="fav1">60 Pages
+                            <label class="form-check-label" for="css"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>1.6 Validity Required</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="c1" name="fav2">10 Years
+                            <label class="form-check-label" for="html"></label>
+                        </div>
+                        <div class="col-sm-4 form-check">
+                            <input type="radio" class="form-check-input" id="c2" name="fav2">Up to age 18
+                            <label class="form-check-label" for="css"></label>
+                        </div>
+                        <h6>(For minors between 15 and 18 years)</h6>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload Your Photo</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="myfile" name="myfile"
+                                aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload Your Signa</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="ta1"
+                                aria-describedby="inputGroupFileAddon01" name="photo">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <!-- 2nd point -->
+                <div id="second">
+                    <h4 id=partone>2. Applicant Details</h4>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>2.1 Applicant's Given Name (Given Name means First
+                                name followed by Middle name (If any))(Initials not allowed)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name1" name="AFirstName"
+                                placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Surname</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="name2" name="ALastName"
+                                placeholder="Enter Surname">
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>2.2 Are you known by any other names (aliases)?</b>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="ht1" name="fav_language1" value="HTML"
+                                onclick="hello2()">Yes
+                            <label class="form-check-label" for="ht1"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="cs2" name="fav_language1" value="CSS"
+                                onclick="hi()">No
+                            <label class="form-check-label" for="cs2"></label>
+                        </div>
+                        <h6>If yes, provide details in Column 1 of Supplementary Form</h6>
+                        <div class="form-group">
+                            <input type=textarea class="form-control" id="t1" placeholder="Enter Another Name" disabled>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>2.3 Have you ever changed your name?</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="ht2" name="language1" value="HTML"
+                                onclick="hello3()">Yes
+                            <label class="form-check-label" for="ht2"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="cs3" name="language1" value="CSS"
+                                onclick="hi2()">No
+                            <label class="form-check-label" for="cs3"></label>
+                        </div>
+                        <h6>If yes, provide details in Column 2 of Supplementary Form</h6>
+
+                        <div class="form-group">
+                            <input type=textarea class="form-control" id="t2" placeholder="Enter changed Name" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>2.4 Date of Birth (DD-MM-YYYY)</b></label>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control" id="dob" name="birthday">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>2.5 Place of Birth (Village or Town or
+                                City)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="text1" name="village">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>District (If born in India)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="text2" name="district">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>State/ UT (If born in India)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="text3" name="state">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Region/Country (If born abroad) If born before
+                                15/08/1947 in a place now in Pakistan or Bangladesh, write "Undivided India"</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="text4" name="state1">
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="gdr"><b>2.6 Gender</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c3" name="fav_language2" value="C3">Male
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c4" name="fav_language2" value="C4">Female
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c9" name="fav_language2"
+                                value="C9">Transgender
+                            <label class="form-check-label" for="c9"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="mr"><b>2.7 Marital Status</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c3" name="fav_language3">Single
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c4" name="fav_language3"> Married
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c9" name="fav_language3">Divorced
+                            <label class="form-check-label" for="c9"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c10" name="fav_language3">Widow/ Widower
+                            <label class="form-check-label" for="c10"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c11" name="fav_language3">Separated
+                            <label class="form-check-label" for="c11"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="coi"><b>2.8 Citizenship of India by</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c3" name="fav_language4" value="C3">Birth
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c4" name="fav_language4" value="C4">Descent
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c9" name="fav_language4"
+                                value="C9">Registration/ Naturalization
+                            <label class="form-check-label" for="c9"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>2.9 PAN (If available)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num1" style="text-transform: uppercase"
+                                name=pannumber>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>2.10 Voter ID (If available)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num2" style="text-transform: uppercase"
+                                name=voterid>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="et"><b>2.11 Employment Type</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c3" name="fav_language5">PSU
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c4" name="fav_language5">GOVERNMENT
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c9" name="fav_language5">Statutory Body
+                            <label class="form-check-label" for="c9"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c10" name="fav_language5">Retired
+                            Government Servant
+                            <label class="form-check-label" for="c10"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c11" name="fav_language5">Self Employed
+                            <label class="form-check-label" for="c11"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c3" name="fav_language5">Private
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c4" name="fav_language5">Homemaker
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c9" name="fav_language5">Not Employed
+                            <label class="form-check-label" for="c9"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c10" name="fav_language5">Retired-Private
+                            Service
+                            <label class="form-check-label" for="c10"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c11" name="fav_language5">Student
+                            <label class="form-check-label" for="c11"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c3" name="fav_language5">Others
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c4" name="fav_language5">Owners, Partners &
+                            Directors of companies which are members of CII, FICCI & ASSOCHAM
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>2.12 If employed in Government/ Statutory Body/ PSU,
+                                specify organization name</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="orname" name="organizationname">
+                        </div>
+                    </div>
+
+                    <div class="label label-primary" id="beter"><b>2.13 Is either of your parent (in case of minor)/
+                            spouse, a government servant?</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c1" name="fav_language8">Yes
+                            <label class="form-check-label" for="c1"></label>
+                        </div>
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c2" name="fav_language8">No
+                            <label class="form-check-label" for="c2"></label>
+                        </div>
+                    </div>
+
+                    <div class="label label-primary" id="eq"><b>2.14 Educational Qualification</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c3" name="rb">7th pass or less
+                            <label class="form-check-label" for="c3"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c4" name="rb">Between 8th and 9th Standard
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c5" name="rb">10th pass and above
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                        <div class="col-sm-3 form-check">
+                            <input type="radio" class="form-check-input" id="c6" name="rb">Graduate and above
+                            <label class="form-check-label" for="c4"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="necr"><b>2.15 Are you eligible for Non-ECR category?</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c1" name="fav_language31">Yes
+                            <label class="form-check-label" for="c1"></label>
+                        </div>
+                        <div class="col-sm-6 form-check">
+                            <input type="radio" class="form-check-input" id="c2" name="fav_language31">No,For details,
+                            see Column 2.15, section B ofInstruction Booklet
+                            <label class="form-check-label" for="c2"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary"><b>2.16 Visible Distinguishing Mark</b></div>
+                    <select class="form-select" aria-label="Default select example" name="Mark" id="cource">
+                        <option selected>Select Mark</option>
+                        <option value="Face">Face</option>
+                        <option value="Hand">Hand</option>
+                        <option value="Chin">Chin</option>
+                        <option value="Nose">Nose</option>
+                    </select>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>2.17 Aadhaar Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num3" name="number">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 3rd point -->
+                <div id="third">
+                    <h4 id=partone>3. Family Details</h4>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>3.1 Father's Given Name </b>(Given Name means First
+                            name followed by Middle name (If any)) (Initials not allowed)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ffn" name="Father_FirstName"
+                                placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Surname</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="fln" name="Father_LastName"
+                                placeholder="Enter Surname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>3.2 Mother's Given Name</b> (Given Name means First
+                            name followed by Middle name (If any)) (Initials not allowed)</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="mfn" name="Mother_FirstName"
+                                placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Surname</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="mln" name="Mother_LastName"
+                                placeholder="Enter Surname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>3.3 Legal Guardian's Given Name </b>(If applicable)
+                            (Initials not allowed)</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="lfn" name="Legal_FirstName"
+                                placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Surname</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="lln" name="Legal_LastName"
+                                placeholder="Enter Surname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>3.4 Spouse's Given Name </b>(Given Name means First
+                            name followed by Middle name (If any)) (Initials not allowed)</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="sfn" name="Spouse_FirstName"
+                                placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Surname</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="sln" name="Spouse_LastName"
+                                placeholder="Enter Surname">
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>3.5 If applicant is minor, provide following details</b>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Father/ Legal Guardian's File/ Passport Number</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num4" name="f_passportnumber1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Father/ Legal Guardian's Nationality, if not
+                            Indian</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num5" name="f_passportnumber2">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Mother/ Legal Guardian's File/ Passport Number</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num4_1" name="m_passportnumber1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label">Mother/ Legal Guardian's Nationality, if not
+                            Indian</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num5_1" name="m_passportnumber2">
+                        </div>
+                    </div>
+                </div>
+                <!-- 4th point -->
+                <div id="four">
+                    <h4 id=partone>4. Present Residential Address Details (Where applicant presently resides)</h4>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>4.1 House No. and Street Name</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="hs" name="numtxt">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Village or Town or City</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ct" name="town">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>District</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="dt" name="jillo">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Police Station</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="ps" name="plcstn">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>State/ UT</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="rjy" name="rajya">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>PIN</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="pn" name="pnum">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>E-mail ID</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="mail" id="eml">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Mobile Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="mon" name="monum">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Telephone Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="tn" name="tenum">
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="pd"><b>4.2 Is permanent address same as present address?</b>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="c4_1" name="fav_language9"
+                                onclick="disact()">Yes
+                            <label class="form-check-label" for="c4_1"></label>
+                        </div>
+                        <div class="col-sm-6 form-check">
+                            <input type="radio" class="form-check-input" id="c4_2" name="fav_language9"
+                                onclick="act()">No, If no, provide details in Column 4 of Supplementary Form
+                            <label class="form-check-label" for="c4_2"></label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- 5th point -->
+                <div id="five">
+                    <h4 id=partone>5. Emergency Contact Details</h4>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Name and Address</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="address" id="add">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Mobile Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num6" name="mno">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Telephone Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num7" name="tno">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>E-mail ID</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="mail2" id="eml2">
+                        </div>
+                    </div>
+                </div>
+                <!-- 6th point -->
+                <div id="six">
+                    <h4 id=partone>6. Previous Passport/ Application Details</h4>
+                    <div class="label label-primary" id="h4"><b>6.1 Details of latest held/ existing/ lost/ damaged
+                            Ordinary Passport/ Identity Certificate</b></div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Passport/ IdentityCertificate Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="icn" id="num8">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Date of Issue (DD-MM-YYYY)</b></label>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control" name="idate" id="num9">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Date of Expiry (DD-MM-YYYY)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="edate" id="num10">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Place of Issue</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="place" id="pc">
+                        </div>
+                    </div>
+                    <h6>If you have held/ hold any diplomatic/ official passport, provide details in Column 6 of
+                        Supplementary Form</h6>
+                    <div class="label label-primary" id="st"><b>6.2 Have you ever applied for passport, but not
+                            issued?</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-2 form-check">
+                            <input type="radio" class="form-check-input" id="rb1" name="fav_language10"
+                                onclick="my1()">Yes
+                            <label class="form-check-label" for="rb1"></label>
+                        </div>
+                        <div class="col-sm-6 form-check">
+                            <input type="radio" class="form-check-input" id="rb2" name="fav_language10"
+                                onclick="my2()">No(If yes, provide the following details)
+                            <label class="form-check-label" for="rb2"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>File Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num11" name="filenumber" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Month and Year of applying</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num12" name="monthandyear" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Name of passport office where applied</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="poffice" id="poff" disabled>
+                        </div>
+                    </div>
+                </div>
+                <!-- 7th point -->
+                <div id="seven">
+                    <h4 id=partone>7. Other details</h4>
+                    <div class="label label-primary"><b>7.1 Provide the following details if there are any criminal
+                            proceedings pending against the applicant.</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_1_1">7.1.1 Are any proceedings in respect of an offence alleged to
+                            have been committed by
+                            you pending before a criminal court in India?
+                            If yes, fill Column 6.1 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language11">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language11">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_1_2">7.1.2 Has any warrant or summons for your appearance been
+                            issued & pending before a court under any law for the time being in force?If yes, fill
+                            Column 6.2 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language12">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language12">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_1_3">7.1.3 Has a warrant for your arrest been issued by a court
+                            under any law for the time being in force?If yes, fill Column 6.3 of Supplementary Form
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language13">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language13">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_1_4">7.1.4 Has an order prohibiting your departure from India been
+                            made by any court?If yes, fill Column 6.4 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language14">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language14">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>7.2 Provide the following details if the applicant has
+                            been convicted by a court in India.</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_2_1">7.2.1 Have you, at any time during the period of five years
+                            immediately preceding the
+                            date of this application, been convicted by a court in India for any offence
+                            involving moral turpitude and sentenced in respect thereof to imprisonment for
+                            not less than two years?
+                            If yes, fill Column 6.5 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language15">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language15">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+
+                    <div class="label label-primary" id="h4"><b>7.3 Provide the following details if the applicant has
+                            been refused/denied passport.</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_3_1">7.3.1 Have you ever been refused/denied passport?If yes, fill
+                            Column 6.6 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language16">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language16">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_3_2">7.3.2 Has your passport ever been impounded?If yes, fill
+                            Column 6.7 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language17">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language17">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_3_3">7.3.3 Has your passport ever been revoked?If yes, fill Column
+                            6.8 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language18">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language18">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>7.4 Provide the following details if applicant has
+                            applied for or been granted foreign citizenship.</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_4_1">7.4.1 Have you ever been granted citizenship by any other
+                            region/country?If yes, fill Column 6.9 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language19">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language19">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_4_2">7.4.2 Have you ever held the passport of any other
+                            region/country at any time?If yes, fill Column 6.10 of Supplementary For</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language20">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language20">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_4_3">7.4.3 Have you ever surrendered your Indian passport?If yes,
+                            fill Column 6.11 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language21">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language21">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_4_4">7.4.4 Have you ever applied for renunciation of Indian
+                            citizenship?If yes, fill Column 6.12 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language22">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language22">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>7.5 Provide the following details if applicant has
+                            returned to India on Emergency Certificate.</b></div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_5_1">7.5.1 Have you ever returned to India on Emergency Certificate
+                            (EC)?If yes, fill Column 6.13 of Supplementary Form</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language23">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language23">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_5_2">7.5.2 Have you ever been deported from any country?If yes, was
+                            the cost borne by the Government of India and if so, has the same been refunded?</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language24">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language24">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                    <div class="from-group row" id="bx">
+                        <div class="col-sm-10" id="7_5_3">7.5.3 Have you ever been repatriated from any country back to
+                            India?If yes, was the cost borne by the Government of India and if so, has the same been
+                            refunded?</div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language25">Yes
+                            <label class="form-check-label"></label>
+                        </div>
+                        <div class="col-sm-1 form-check">
+                            <input type="radio" class="form-check-input" name="fav_language25">No
+                            <label class="form-check-label"></label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 8th point -->
+                <div id="eight">
+                    <h4 id=partone>8. Fee Details (Not to be filled by applicants submitting the application at Passport
+                        Seva Kendra)</h4>
+
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>8.1 Fee amount in (Rs)</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num13" name="fee">
+                        </div>
+                    </div>
+                    <div class="label label-primary" id="h4"><b>8.2 If paid by Demand Draft (DD), provide the following
+                            details</b></div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>DD Number</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="num14" name="ddnum">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>DD Issue Date</b></label>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control" id="dt1" name="issuedate">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>DD Expiry Date</b></label>
+                        <div class="col-sm-6">
+                            <input type="date" class="form-control" id="dt2" name="expirydate">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Bank Name</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="bankname" id="bnknm">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-6 col-form-label"><b>Branch</b></label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="branchname" id="brncnm">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 9th point -->
+                <div id="nine">
+                    <h4 id=partone>9. Enclosures</h4>
+                    <div class="form-group row">
+                        <label class="col-sm-1 col-form-label"><b>1</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec1" id="t1">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>2</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec2" id="t2">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>3</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec3" id="t3">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>4</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec4" id="t4">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>5</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec5" id="t5">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>6</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec6" id="t6">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>7</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec7" id="t7">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>8</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec8" id="t8">
+                        </div>
+
+                        <label class="col-sm-1 col-form-label"><b>9</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec9" id="t9">
+                        </div>
+                        <label class="col-sm-1 col-form-label"><b>10</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="ec10" id="t10">
+                        </div>
+                    </div>
+                </div>
+                <!-- 10th point -->
+                <div id="ten">
+                    <h4 id=partone><b>10. Self Declaration</b></h4>
+                    <p>I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily
+                        acquired citizenship or
+                        travel document of any other country. I have not lost, surrendered or been deprived of the
+                        citizenship of India.
+                        I have not contravened any of the conditions relating to the possession and use of an Indian
+                        passport.
+                    </p>
+                    <p>I affirm that the information and particulars given by me in this form are true and correct. I
+                        further state that I
+                        am not suppressing any material information in this regard. I further affirm that the enclosures
+                        and documentary
+                        proof submitted in support of my application for an Indian passport are authentic and solely
+                        pertain to me and
+                        I am fully responsible for the accuracy of the same. I am liable to be penalized or prosecuted
+                        if found otherwise.
+                        I am aware that under the Passports Act, 1967 it is a criminal offence to furnish any false
+                        information or to
+                        suppress any material information with a view to obtaining passport or travel document.
+                    </p>
+                    <p>I have read and understood the contents of the above and by submitting this form certify that all
+                        the information
+                        submitted by me in the form is bonafide.</p>
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label"><b>Place</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="plctx" name="spot">
+                        </div>
+
+                        <label class="col-sm-3 col-form-label"><b>Date (DD-MM-YYYY)</b></label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="tddt" name="todaydate">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload Sign</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="sign" name="signature"
+                                aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- For Error -->
+                <div class="alert alert-danger" role="alert">
+                    <a href="#fnum" id="error0_1" class="alert-link"></a>
+                    <a href="#fnum" id="error0_2" class="alert-link"></a>
+                    <a href="#fnum" id="error0_3" class="alert-link"></a>
+                    <a href="#fnum" id="error0_4" class="alert-link"></a>
+                    <a href="#fnum" id="error0_5" class="alert-link"></a>
+                    <a href="#h4" id="error1_1" class="alert-link"></a>
+                    <a href="#ri" id="error1_2" class="alert-link"></a>
+                    <a href="#sr" id="error1_3" class="alert-link"></a>
+                    <a href="#txtarea1" id="txterr1" class="alert-link"></a>
+                    <a href="#txtarea2" id="txterr2" class="alert-link"></a>
+                    <a href="#h4" id="error1_4" class="alert-link"></a>
+                    <a href="#h4" id="error1_5" class="alert-link"></a>
+                    <a href="#h4" id="error1_6" class="alert-link"></a>
+                    <a href="#myfile" id="fl1" class="alert-link"></a>
+                    <a href="#ta1" id="fl2" class="alert-link"></a>
+                    <a href="#name1" id="error2_1_1" class="alert-link"></a>
+                    <a href="#name2" id="error2_1_2" class="alert-link"></a>
+                    <a href="#h4" id="error2_2" class="alert-link"></a>
+                    <a href="#t1" id="error2_2_1" class="alert-link"></a>
+                    <a href="#h4" id="error2_3" class="alert-link"></a>
+                    <a href="#t2" id="error2_3_1" class="alert-link"></a>
+                    <a href="#dob" id="error2_4" class="alert-link"></a>
+                    <a href="#text1" id="error2_5_1" class="alert-link"></a>
+                    <a href="#text2" id="error2_5_2" class="alert-link"></a>
+                    <a href="#text3" id="error2_5_3" class="alert-link"></a>
+                    <a href="#text4" id="error2_5_4" class="alert-link"></a>
+                    <a href="#gdr" id="error2_6" class="alert-link"></a>
+                    <a href="#mr" id="error2_7" class="alert-link"></a>
+                    <a href="#coi" id="error2_8" class="alert-link"></a>
+                    <a href="#num1" id="error2_9" class="alert-link"></a>
+                    <a href="#num2" id="error2_10" class="alert-link"></a>
+                    <a href="#et" id="error2_11" class="alert-link"></a>
+                    <a href="#orname" id="error2_12" class="alert-link"></a>
+                    <a href="#beter" id="error2_13" class="alert-link"></a>
+                    <a href="#eq" id="error2_14" class="alert-link"></a>
+                    <a href="#necr" id="error2_15" class="alert-link"></a>
+                    <a href="#cource" id="error2_16" class="alert-link"></a>
+                    <a href="#num3" id="error2_17" class="alert-link"></a>
+                    <a href="#ffn" id="error3_1_1" class="alert-link"></a>
+                    <a href="#fln" id="error3_1_2" class="alert-link"></a>
+                    <a href="#mfn" id="error3_2_1" class="alert-link"></a>
+                    <a href="#mln" id="error3_2_2" class="alert-link"></a>
+                    <a href="#lfn" id="error3_3_1" class="alert-link"></a>
+                    <a href="#lln" id="error3_3_2" class="alert-link"></a>
+                    <a href="#sfn" id="error3_4_1" class="alert-link"></a>
+                    <a href="#sln" id="error3_4_2" class="alert-link"></a>
+                    <a href="#num4" id="error3_5_1" class="alert-link"></a>
+                    <a href="#num5" id="error3_5_2" class="alert-link"></a>
+                    <a href="#num4_1" id="error3_5_3" class="alert-link"></a>
+                    <a href="#num5_1" id="error3_5_4" class="alert-link"></a>
+                    <a href="#hs" id="error4_1_1" class="alert-link"></a>
+                    <a href="#ct" id="error4_1_2" class="alert-link"></a>
+                    <a href="#dt" id="error4_1_3" class="alert-link"></a>
+                    <a href="#ps" id="error4_1_4" class="alert-link"></a>
+                    <a href="#rjy" id="error4_1_5" class="alert-link"></a>
+                    <a href="#pn" id="error4_1_6" class="alert-link"></a>
+                    <a href="#eml" id="error4_1_7" class="alert-link"></a>
+                    <a href="#mon" id="error4_1_8" class="alert-link"></a>
+                    <a href="#tn" id="error4_1_9" class="alert-link"></a>
+                    <a href="#pd" id="error4_2" class="alert-link"></a>
+                    <a href="#add" id="error5_1" class="alert-link"></a>
+                    <a href="#num6" id="error5_2" class="alert-link"></a>
+                    <a href="#num7" id="error5_3" class="alert-link"></a>
+                    <a href="#eml2" id="error5_4" class="alert-link"></a>
+                    <a href="#num8" id="error6_1_1" class="alert-link"></a>
+                    <a href="#num9" id="error6_1_2" class="alert-link"></a>
+                    <a href="#num10" id="error6_1_3" class="alert-link"></a>
+                    <a href="#pc" id="error6_1_4" class="alert-link"></a>
+                    <a href="#st" id="error6_2_1" class="alert-link"></a>
+                    <a href="#num11" id="error6_2_2" class="alert-link"></a>
+                    <a href="#num12" id="error6_2_3" class="alert-link"></a>
+                    <a href="#poff" id="error6_2_4" class="alert-link"></a>
+                    <a href="#7_1_1" id="error7_1_1" class="alert-link"></a>
+                    <a href="#7_1_2" id="error7_1_2" class="alert-link"></a>
+                    <a href="#7_1_3" id="error7_1_3" class="alert-link"></a>
+                    <a href="#7_1_4" id="error7_1_4" class="alert-link"></a>
+                    <a href="#7_2_1" id="error7_2_1" class="alert-link"></a>
+                    <a href="#7_3_1" id="error7_3_1" class="alert-link"></a>
+                    <a href="#7_3_2" id="error7_3_2" class="alert-link"></a>
+                    <a href="#7_3_3" id="error7_3_3" class="alert-link"></a>
+                    <a href="#7_4_1" id="error7_4_1" class="alert-link"></a>
+                    <a href="#7_4_2" id="error7_4_2" class="alert-link"></a>
+                    <a href="#7_4_3" id="error7_4_3" class="alert-link"></a>
+                    <a href="#7_4_4" id="error7_4_4" class="alert-link"></a>
+                    <a href="#7_5_1" id="error7_5_1" class="alert-link"></a>
+                    <a href="#7_5_2" id="error7_5_2" class="alert-link"></a>
+                    <a href="#7_5_3" id="error7_5_3" class="alert-link"></a>
+                    <a href="#num13" id="error8_1" class="alert-link"></a>
+                    <a href="#num14" id="error8_2_1" class="alert-link"></a>
+                    <a href="#dt1" id="error8_2_2" class="alert-link"></a>
+                    <a href="#dt2" id="error8_2_3" class="alert-link"></a>
+                    <a href="#bnknm" id="error8_2_4" class="alert-link"></a>
+                    <a href="#brncnm" id="error8_2_5" class="alert-link"></a>
+                    <a href="#t1" id="error9_1" class="alert-link"></a>
+                    <a href="#t2" id="error9_2" class="alert-link"></a>
+                    <a href="#t3" id="error9_3" class="alert-link"></a>
+                    <a href="#t4" id="error9_4" class="alert-link"></a>
+                    <a href="#t5" id="error9_5" class="alert-link"></a>
+                    <a href="#t6" id="error9_6" class="alert-link"></a>
+                    <a href="#t7" id="error9_7" class="alert-link"></a>
+                    <a href="#t8" id="error9_8" class="alert-link"></a>
+                    <a href="#t9" id="error9_9" class="alert-link"></a>
+                    <a href="#t10" id="error9_10" class="alert-link"></a>
+                    <a href="#plctx" id="error10_1" class="alert-link"></a>
+                    <a href="#tddt" id="error10_3" class="alert-link"></a>
+                    <a href="#sign" id="error10_2" class="alert-link"></a>
+
+                </div>
+                <br>
+                <!-- Buttons -->
+                <div class="form-group row">
+                    <div class="col-sm-2" id="mybtn">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </div>
+                    <div class="col-sm-2" id="myrst">
+                        <input type="reset" class="btn btn-primary" value="Reset">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript" src="task2.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>

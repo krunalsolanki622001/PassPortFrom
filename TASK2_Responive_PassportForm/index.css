@@ -1,0 +1,28 @@
+#right
+{
+    margin:30px;
+	padding:10px;
+	float:right;
+}
+h3
+{
+	text-align:center;
+	font-family: serif;
+	font-weight:bold;
+}
+.one
+{
+	margin:30px;
+	padding:10px;
+	float:right;
+    background-color:#EDF1FF;
+}
+#partone
+{
+	background-color:orange;
+	border-bottom: 3px solid black;
+}
+#bx{
+    padding-left:30px;
+	padding-right:30px;
+}
